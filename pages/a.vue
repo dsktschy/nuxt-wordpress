@@ -1,7 +1,7 @@
 <template>
   <div class="body-inner">
     <the-header/>
-    <h1>Top</h1>
+    <h1>Page A</h1>
     <the-footer/>
   </div>
 </template>
