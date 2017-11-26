@@ -33,6 +33,12 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+    vendor: [
+      'axios'
+    ]
+  },
+  env: {
+    API_URL: 'https://dsktestschy.wpblog.jp/wp-json/wp/v2'
   }
 }

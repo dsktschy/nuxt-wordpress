@@ -2,10 +2,8 @@
   <div class="body-inner">
     <the-header/>
     <main>
-      <h1>Top</h1>
-      <ul class="post-list" v-for="post of posts" :key="post.id">
-        <li><nuxt-link :to="`/${post.id}`">{{post.title.rendered}}</nuxt-link></li>
-      </ul>
+      <h1>{{post.title.rendered}}</h1>
+      <div v-html="post.content.rendered"></div>
     </main>
     <the-footer/>
   </div>
@@ -21,9 +19,9 @@ export default {
     TheHeader,
     TheFooter
   },
-  async asyncData () {
-    const {data} = await axios.get(`${process.env.API_URL}/posts`)
-    return {posts: data}
+  async asyncData ({params}) {
+    const {data} = await axios.get(`${process.env.API_URL}/posts/${params.id}`)
+    return {post: data}
   }
 }
 </script>

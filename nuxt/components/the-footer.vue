@@ -4,7 +4,7 @@
   </footer>
 </template>
 
-<style>
+<style scoped>
 .copyright {
   display: block;
   font-size: 12px;
