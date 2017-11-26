@@ -1,26 +1,16 @@
 <template>
-  <div class="body-inner">
-    <the-header/>
-    <main>
-      <h1>Top</h1>
-      <ul class="post-list" v-for="post of posts" :key="post.id">
-        <li><nuxt-link :to="`/${post.id}`">{{post.title.rendered}}</nuxt-link></li>
-      </ul>
-    </main>
-    <the-footer/>
-  </div>
+  <main>
+    <h1>Top</h1>
+    <ul class="post-list" v-for="post of posts" :key="post.id">
+      <li><nuxt-link :to="`/${post.id}`">{{post.title.rendered}}</nuxt-link></li>
+    </ul>
+  </main>
 </template>
 
 <script>
 import axios from 'axios'
-import TheHeader from '~/components/the-header.vue'
-import TheFooter from '~/components/the-footer.vue'
 
 export default {
-  components: {
-    TheHeader,
-    TheFooter
-  },
   async asyncData () {
     const {data} = await axios.get(`${process.env.API_URL}/posts`)
     return {posts: data}
