@@ -1,7 +1,7 @@
 {
-  "name": "nuxt-sample",
+  "name": "nuxt-wordpress",
   "version": "1.0.0",
-  "description": "Nuxt.js project",
+  "description": "Nuxt.js with WP REST API",
   "author": "dai",
   "private": true,
   "scripts": {
