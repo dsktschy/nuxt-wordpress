@@ -39,6 +39,6 @@ module.exports = {
     ]
   },
   env: {
-    API_URL: 'https://dsktestschy.wpblog.jp/wp-json/wp/v2'
+    API_URL: 'https://dsktestschy.wpblog.jp/wp-json'
   }
 }

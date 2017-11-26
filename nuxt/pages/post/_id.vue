@@ -1,21 +1,25 @@
 <template>
   <main>
-    <h1>Top</h1>
-    <ul class="post-list" v-for="post of $store.state.posts" :key="post.id">
-      <li><nuxt-link :to="`/post/${post.id}`">{{post.title.rendered}}</nuxt-link></li>
-    </ul>
+    <h1>{{post.title.rendered}}</h1>
+    <div v-html="post.content.rendered"></div>
   </main>
 </template>
 
 <script>
 export default {
+  data () {
+    return {
+      post: this.$store.state.posts
+        .filter(post => post.id === +this.$route.params.id)[0]
+    }
+  },
   async fetch ({store}) {
     await store.dispatch('updateSiteData')
     await store.dispatch('updatePosts')
   },
   head () {
     return {
-      title: this.$store.state.name
+      title: `${this.post.title.rendered} | ${this.$store.state.name}`
     }
   }
 }

@@ -3,7 +3,8 @@
     <nav>
       <ul class="nav-list">
         <li><nuxt-link to="/">Top</nuxt-link></li>
-        <li><nuxt-link to="/about">About</nuxt-link></li>
+        <li><nuxt-link to="/page/about">About</nuxt-link></li>
+        <li><nuxt-link to="/page/contact">Contact</nuxt-link></li>
       </ul>
     </nav>
   </header>
