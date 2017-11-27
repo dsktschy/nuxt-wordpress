@@ -1,3 +1,5 @@
+const axios = require('axios')
+
 module.exports = {
   /*
   ** Headers of the page
@@ -39,6 +41,17 @@ module.exports = {
     ]
   },
   env: {
-    API_URL: 'https://dsktestschy.wpblog.jp/wp-json'
+    API_URL: process.env.API_URL
+  },
+  generate: {
+    async routes () {
+      const
+        {data: posts} = await axios.get(`${process.env.API_URL}/wp/v2/posts`),
+        {data: pages} = await axios.get(`${process.env.API_URL}/wp/v2/pages`)
+      return [
+        ...posts.map(post => `/post/${post.id}`),
+        ...pages.map(page => `/page/${page.slug}`)
+      ]
+    }
   }
 }
