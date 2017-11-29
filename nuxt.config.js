@@ -45,12 +45,14 @@ module.exports = {
   },
   generate: {
     async routes () {
-      const
-        {data: posts} = await axios.get(`${process.env.API_URL}/wp/v2/posts`),
-        {data: pages} = await axios.get(`${process.env.API_URL}/wp/v2/pages`)
+      // const
+      //   {data: posts} = await axios.get(`${process.env.API_URL}/wp/v2/posts`),
+      //   {data: pages} = await axios.get(`${process.env.API_URL}/wp/v2/pages`)
       return [
-        ...posts.map(post => `/post/${post.id}`),
-        ...pages.map(page => `/page/${page.slug}`)
+        
+        '/post/1'
+        // ...posts.map(post => `/post/${post.id}`),
+        // ...pages.map(page => `/page/${page.slug}`)
       ]
     }
   }
