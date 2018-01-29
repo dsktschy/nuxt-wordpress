@@ -6,8 +6,8 @@ export default () => new Vuex.Store({
     name: '',
     description: '',
     url: '',
-    posts: {},
-    pages: {}
+    posts: [],
+    pages: []
   },
   mutations: {
     updateName (state, {value}) {
